@@ -45,8 +45,12 @@ My name is **Prince Kumar Sah**, a passionate full-stack development learner cur
 1. Download the ZIP or clone the repo:
    ```bash
    git clone                https://github.com/prince98042/Full-Stack-Development-Portfolio
-   git eportfolio link      https://prince98042.github.io/Full-Stack-Development-Portfolio/
    ```
+  you can see my website form the link given below
+   ```bash
+   git eportfolio           https://prince98042.github.io/Full-Stack-Development-Portfolio/
+   ```
+
 2. Open `index.html` in your browser.
 3. Navigate through sections or visit:
    - `html.html`
