@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JS Navigation & Scroll Explained</title>
+
+  <!-- Boxicons -->
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    .nav {
+      background-color: #222;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav__logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav__list {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav__link {
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .nav__link:hover {
+      color: #4db6ac;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 2rem 0 1rem;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .js-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 0 2rem 3rem;
+    }
+
+    .js__code-box, .js__explanation-box {
+      flex: 1;
+      min-width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .js__code-box {
+      background-color: #e3f2fd;
+      font-family: 'Courier New', Courier, monospace;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .js__explanation-box {
+      background-color: #fff9e6;
+      line-height: 1.6;
+    }
+
+    .footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    .footer__icon {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .footer__icon:hover {
+      color: #4db6ac;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <a href="index.html" class="nav__logo">Prince</a>
+    <ul class="nav__list">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="html.html" class="nav__link">HTML</a></li>
+        <li><a href="css.html" class="nav__link">CSS</a></li>
+        <li><a href="js.html" class="nav__link">JavaScript</a></li>
+        <li><a href="bootstrap.html" class="nav__link">Bootstrap</a></li>
+
+    </ul>
+</header>
+
+  <!-- SECTION -->
+  <h2 class="section-title">JS Navigation & Scroll Code Explained</h2>
+
+  <div class="js-section">
+    <!-- Code Box -->
+    <div class="js__code-box">
+<pre>
+/*===== MENU SHOW =====*/ 
+const showMenu = (toggleId, navId) => {
+  const toggle = document.getElementById(toggleId),
+        nav = document.getElementById(navId)
+
+  if(toggle && nav){
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show')
+    })
+  }
+}
+showMenu('nav-toggle','nav-menu')
+
+/*===== REMOVE MENU ON LINK CLICK =====*/
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction(){
+  const navMenu = document.getElementById('nav-menu')
+  navMenu.classList.remove('show')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
+/*===== SCROLL SECTION ACTIVE LINK =====*/
+const sections = document.querySelectorAll('section[id]')
+
+const scrollActive = () => {
+  const scrollDown = window.scrollY
+
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight,
+          sectionTop = current.offsetTop - 58,
+          sectionId = current.getAttribute('id'),
+          sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+    if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+      sectionsClass.classList.add('active-link')
+    } else {
+      sectionsClass.classList.remove('active-link')
+    }
+  })
+}
+window.addEventListener('scroll', scrollActive)
+
+/*===== SCROLL REVEAL ANIMATION =====*/
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration: 2000,
+  delay: 200,
+});
+
+sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
+sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400});
+sr.reveal('.home__social-icon',{ interval: 200 });
+sr.reveal('.skills__data, .work__img, .contact__input',{ interval: 200 });
+</pre>
+    </div>
+
+    <!-- Explanation Box -->
+    <div class="js__explanation-box">
+      <p><strong>showMenu()</strong> — Adds a toggle button click listener to show/hide the nav menu.</p>
+      <p><strong>toggle.classList.toggle('show')</strong> — Adds or removes the 'show' class to display the nav.</p>
+      <p><strong>navLink.forEach</strong> — On any nav link click, removes the 'show' class (mobile menu behavior).</p>
+      <p><strong>scrollActive()</strong> — Highlights the current menu item based on scroll position.</p>
+      <p><strong>ScrollReveal()</strong> — Uses the ScrollReveal library to animate elements on scroll with different delays.</p>
+      <p>These functions help build a responsive and interactive single-page portfolio with animated effects and section-based navigation highlighting.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer__title">Prince</p>
+    <div>
+      <a href="#" class="footer__icon"><i class='bx bxl-facebook'></i></a>
+      <a href="#" class="footer__icon"><i class='bx bxl-instagram'></i></a>
+      <a href="#" class="footer__icon"><i class='bx bxl-github'></i></a>
+    </div>
+    <p class="footer__copy">&#169; Prince Kumar Sah. All rights reserved @2025</p>
+  </footer>
+
+</body>
+</html>

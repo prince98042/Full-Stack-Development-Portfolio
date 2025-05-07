@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Code Explained</title>
+
+    <!-- Boxicons CDN -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+
+        /* ===== NAVBAR ===== */
+        .nav {
+            background-color: #222;
+            color: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav__logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav__list {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav__link {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .nav__link:hover {
+            color: #00bcd4;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .section-title {
+            text-align: center;
+            margin: 2rem 0 1rem;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .html-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0 2rem 3rem;
+        }
+
+        .html__code-box, .html__explanation-box {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .html__code-box {
+            background-color: #eef6fb;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap;
+        }
+
+        .html__explanation-box {
+            background-color: #fff9e6;
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        .footer__icon {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .footer__icon:hover {
+            color: #00bcd4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="nav">
+        <a href="index.html" class="nav__logo">Prince</a>
+        <ul class="nav__list">
+            <li><a href="index.html" class="nav__link">Home</a></li>
+            <li><a href="html.html" class="nav__link">HTML</a></li>
+            <li><a href="css.html" class="nav__link">CSS</a></li>
+            <li><a href="js.html" class="nav__link">JavaScript</a></li>
+            <li><a href="bootstrap.html" class="nav__link">Bootstrap</a></li>
+
+        </ul>
+    </header>
+
+    <!-- ===== MAIN SECTION ===== -->
+    <h2 class="section-title">HTML Code & Explanation</h2>
+
+    <div class="html-section">
+        <!-- Code Box -->
+        <div class="html__code-box">
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Example Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;p&gt;Welcome to HTML.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+        </div>
+
+        <!-- Explanation Box -->
+        <div class="html__explanation-box">
+            <p><strong>&lt;!DOCTYPE html&gt;</strong> – Declares HTML5, the latest HTML standard.</p>
+            <p><strong>&lt;html lang="en"&gt;</strong> – Root tag of the page, sets language to English.</p>
+            <p><strong>&lt;head&gt;</strong> – Contains metadata like charset, title, and links.</p>
+            <p><strong>&lt;meta charset="UTF-8"&gt;</strong> – Defines the character encoding for the document.</p>
+            <p><strong>&lt;title&gt;</strong> – Title of the web page (shown in browser tab).</p>
+            <p><strong>&lt;body&gt;</strong> – Contains all the visible content.</p>
+            <p><strong>&lt;h1&gt;</strong> – Main heading of the page.</p>
+            <p><strong>&lt;p&gt;</strong> – A paragraph element used for text.</p>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p class="footer__title">Prince</p>
+        <div>
+            <a href="#" class="footer__icon"><i class='bx bxl-facebook'></i></a>
+            <a href="#" class="footer__icon"><i class='bx bxl-instagram'></i></a>
+            <a href="#" class="footer__icon"><i class='bx bxl-github'></i></a>
+        </div>
+        <p class="footer__copy">&#169; Prince Kumar Sah. All rights reserved @2025</p>
+    </footer>
+
+</body>
+</html>
